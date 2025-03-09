@@ -1,3 +1,6 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@300;400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -13,11 +16,11 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 222.2 47.4% 11.2%;
+    --primary: 24 100% 50%;
     --primary-foreground: 210 40% 98%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 0 0% 9%;
+    --secondary-foreground: 210 40% 98%;
 
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
@@ -30,25 +33,9 @@
 
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --ring: 24 100% 50%;
 
-    --radius: 0.5rem;
-
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --radius: 0.75rem;
   }
 
   .dark {
@@ -61,8 +48,8 @@
     --popover: 222.2 84% 4.9%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 24 100% 50%;
+    --primary-foreground: 0 0% 0%;
 
     --secondary: 217.2 32.6% 17.5%;
     --secondary-foreground: 210 40% 98%;
@@ -78,15 +65,7 @@
 
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --ring: 24 100% 50%;
   }
 }
 
@@ -95,7 +74,76 @@
     @apply border-border;
   }
 
+  html {
+    @apply scroll-smooth;
+  }
+
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans overflow-x-hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading font-bold;
+  }
+}
+
+@layer components {
+  .hero-section {
+    background-image: linear-gradient(to right, rgba(0,0,0,0.85), rgba(0,0,0,0.6));
+    background-size: cover;
+    background-position: center;
+  }
+
+  .glass-card {
+    @apply bg-white/90 backdrop-blur-sm border border-white/20 shadow-lg;
+  }
+
+  .section-heading {
+    @apply text-3xl md:text-4xl lg:text-5xl font-bold mb-6 font-heading;
+  }
+
+  .section-subheading {
+    @apply text-xl md:text-2xl font-semibold mb-4 font-heading;
+  }
+
+  .btn-primary {
+    @apply bg-slusollubes-orange text-white px-6 py-3 rounded-lg font-semibold transition-all
+    hover:bg-opacity-90 hover:shadow-md active:scale-95;
+  }
+
+  .btn-secondary {
+    @apply bg-slusollubes-black text-white px-6 py-3 rounded-lg font-semibold transition-all
+    hover:bg-opacity-90 hover:shadow-md active:scale-95;
+  }
+
+  .btn-outline {
+    @apply border-2 border-slusollubes-orange text-slusollubes-orange px-6 py-3 rounded-lg font-semibold transition-all
+    hover:bg-slusollubes-orange hover:text-white active:scale-95;
+  }
+
+  .nav-link {
+    @apply relative px-2 py-1 text-white transition-all duration-300 after:absolute after:w-0 after:h-0.5 after:bg-slusollubes-orange after:left-0 after:-bottom-1 after:transition-all after:duration-300
+    hover:after:w-full hover:text-slusollubes-orange;
+  }
+
+  .nav-link.active {
+    @apply text-slusollubes-orange after:w-full;
+  }
+
+  .animate-on-scroll {
+    @apply opacity-0;
+  }
+
+  .animate-on-scroll.is-visible {
+    @apply animate-fade-up;
+  }
+
+  .product-card {
+    @apply bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300
+    hover:shadow-xl hover:-translate-y-1;
+  }
+
+  .testimonial-card {
+    @apply p-6 rounded-xl bg-slusollubes-gray-light border border-slusollubes-gray-medium;
   }
 }
