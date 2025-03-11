@@ -1,11 +1,11 @@
 
-import { Droplet, DollarSign, Shield, Gear } from "lucide-react";
+import { Droplet, DollarSign, Shield, Cog } from "lucide-react";
 
 const features = [
   {
     title: "Reliable Performance",
     description: "Our lubricants are engineered to deliver consistent performance in even the most demanding conditions.",
-    icon: Gear,
+    icon: Cog,
   },
   {
     title: "Cost-Effective Solutions",
