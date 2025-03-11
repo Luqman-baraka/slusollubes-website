@@ -1,22 +1,27 @@
 
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import AboutHero from "@/components/about/AboutHero";
+import AboutIntro from "@/components/about/AboutIntro";
+import MissionVision from "@/components/about/MissionVision";
+import History from "@/components/about/History";
+import Founders from "@/components/about/Founders";
+import Capabilities from "@/components/about/Capabilities";
+import AboutCTA from "@/components/about/AboutCTA";
 
 const About = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
       
-      <main className="flex-grow pt-24">
-        <section className="py-12 bg-gray-50">
-          <div className="container mx-auto px-4">
-            <h1 className="text-4xl font-bold mb-8 font-heading">About Us</h1>
-            <p className="text-lg mb-8">
-              This page will contain information about Slusollubes, our history, 
-              mission, and values. Coming soon!
-            </p>
-          </div>
-        </section>
+      <main className="flex-grow">
+        <AboutHero />
+        <AboutIntro />
+        <MissionVision />
+        <History />
+        <Founders />
+        <Capabilities />
+        <AboutCTA />
       </main>
       
       <Footer />
