@@ -1,5 +1,4 @@
-
-import { Phone, Mail, MapPin, Send, Clock, Fax, Facebook, Instagram, Twitter, MessageSquare } from "lucide-react";
+import { Phone, Mail, MapPin, Send, Clock, MessageSquare, Facebook, Instagram, Twitter, FileText } from "lucide-react";
 import { useState } from "react";
 
 const ContactSection = () => {
@@ -101,7 +100,7 @@ const ContactSection = () => {
             
             <div className="flex items-start space-x-3">
               <div className="bg-slusollubes-orange/10 p-2 rounded-full text-slusollubes-orange mt-1">
-                <Fax size={18} />
+                <FileText size={18} />
               </div>
               <div>
                 <p className="text-gray-700">FAX: (+254) 20 2101003</p>
