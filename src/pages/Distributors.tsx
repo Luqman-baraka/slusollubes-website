@@ -4,7 +4,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import DistributorMap from "@/components/DistributorMap";
 import DistributorList from "@/components/DistributorList";
-import { MapPin, Search, Phone, Mail, MapIcon } from "lucide-react";
+import { MapPin, Search, Phone, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
@@ -13,7 +13,7 @@ import { Link } from "react-router-dom";
 
 const Distributors = () => {
   const [searchQuery, setSearchQuery] = useState("");
-  const [selectedRegion, setSelectedRegion] = useState("");
+  const [selectedRegion, setSelectedRegion] = useState("all");
   const [viewType, setViewType] = useState<"list" | "map">("list");
 
   // Filter distributors based on search query and selected region
@@ -22,7 +22,7 @@ const Distributors = () => {
       distributor.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
       distributor.location.toLowerCase().includes(searchQuery.toLowerCase());
     
-    const matchesRegion = selectedRegion === "" || distributor.region === selectedRegion;
+    const matchesRegion = selectedRegion === "all" || distributor.region === selectedRegion;
     
     return matchesSearch && matchesRegion;
   });
@@ -85,7 +85,7 @@ const Distributors = () => {
                       <SelectValue placeholder="Select Region" />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="">All Regions</SelectItem>
+                      <SelectItem value="all">All Regions</SelectItem>
                       {regions.map((region) => (
                         <SelectItem key={region} value={region}>{region}</SelectItem>
                       ))}
@@ -95,7 +95,6 @@ const Distributors = () => {
                 <Button 
                   className="bg-slusollubes-orange hover:bg-slusollubes-orange/90 text-white"
                   onClick={() => {
-                    // This would trigger a search if we had more complex functionality
                     console.log("Search with:", { searchQuery, selectedRegion });
                   }}
                 >
