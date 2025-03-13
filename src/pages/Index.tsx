@@ -5,8 +5,6 @@ import Hero from "@/components/Hero";
 import ProductHighlights from "@/components/ProductHighlights";
 import WhyChooseSlusollubes from "@/components/WhyChooseSlusollubes";
 import DistributorSection from "@/components/DistributorSection";
-import Testimonials from "@/components/Testimonials";
-import ContactSection from "@/components/ContactSection";
 
 const Index = () => {
   return (
@@ -18,8 +16,6 @@ const Index = () => {
         <ProductHighlights />
         <WhyChooseSlusollubes />
         <DistributorSection />
-        <Testimonials />
-        <ContactSection />
       </main>
       
       <Footer />

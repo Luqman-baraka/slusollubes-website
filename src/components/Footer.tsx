@@ -86,17 +86,22 @@ const Footer = () => {
           <div>
             <h3 className="text-xl font-heading font-bold mb-4">Contact Us</h3>
             <address className="not-italic text-gray-300 space-y-2">
-              <p>123 Lubricant Street, Industrial Zone</p>
-              <p>City, State 12345</p>
-              <p>Country</p>
+              <p>SYNERGY LUBRICANT SOLUTIONS LTD</p>
+              <p>UNIT 3, KENROID COMPLEX, IMARA DAIMA</p>
+              <p>TELGA LORUPE ROAD OFF MOMBASA ROAD</p>
               <p className="pt-2">
-                <a href="mailto:info@slusollubes.com" className="hover:text-slusollubes-orange transition-colors">
-                  info@slusollubes.com
+                <a href="tel:+254736210100" className="hover:text-slusollubes-orange transition-colors">
+                  MOBILE: (+254) 736 210 100
                 </a>
               </p>
               <p>
-                <a href="tel:+1234567890" className="hover:text-slusollubes-orange transition-colors">
-                  +1 (234) 567-890
+                <a href="https://wa.me/254748200101" className="hover:text-slusollubes-orange transition-colors">
+                  WHATSAPP: (+254) 748 200 101
+                </a>
+              </p>
+              <p>
+                <a href="mailto:info@slusollubes.com" className="hover:text-slusollubes-orange transition-colors">
+                  EMAIL: info@slusollubes.com
                 </a>
               </p>
             </address>
