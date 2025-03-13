@@ -2,11 +2,13 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
+  const isMobile = useIsMobile();
 
   const isActive = (path: string) => location.pathname === path;
 
@@ -19,6 +21,11 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Close mobile menu when changing route
+  useEffect(() => {
+    setIsMenuOpen(false);
+  }, [location.pathname]);
+
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
@@ -28,7 +35,7 @@ const Navbar = () => {
       className={`fixed w-full top-0 z-50 transition-all duration-300 ${
         scrolled
           ? "bg-slusollubes-black/95 backdrop-blur-sm py-3 shadow-md"
-          : "bg-transparent py-5"
+          : "bg-slusollubes-black/80 backdrop-blur-sm py-5"
       }`}
     >
       <div className="container px-4 mx-auto flex justify-between items-center">
@@ -40,7 +47,10 @@ const Navbar = () => {
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex space-x-8">
-          <Link to="/" className={`nav-link ${isActive("/") ? "active" : ""}`}>
+          <Link 
+            to="/" 
+            className={`nav-link ${isActive("/") ? "active" : ""}`}
+          >
             Home
           </Link>
           <Link
@@ -81,7 +91,7 @@ const Navbar = () => {
 
       {/* Mobile Navigation */}
       <div
-        className={`md:hidden bg-slusollubes-black/95 absolute top-full left-0 right-0 overflow-hidden transition-all duration-300 ease-in-out ${
+        className={`md:hidden bg-slusollubes-black/95 absolute top-full left-0 right-0 overflow-hidden transition-all duration-300 ease-in-out shadow-lg ${
           isMenuOpen ? "max-h-[300px] border-b border-gray-800" : "max-h-0"
         }`}
       >
